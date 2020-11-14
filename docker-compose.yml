@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+    api-gateway:
+        container_name: API_GATEWAY
+        build:
+            dockerfile: Dockerfile
+            context: ./api-gateway-aws
+        ports:
+            - "3000:3000"
+    api-products:
+        container_name: API_PRODUCTS
+        build:
+            dockerfile: Dockerfile
+            context: ./api-products
+        ports:
+            - "3002:3002"
+    api-sales:
+        container_name: API_SALES
+        build:
+            dockerfile: Dockerfile
+            context: ./api-sales
+        ports:
+            - "3001:3001"
